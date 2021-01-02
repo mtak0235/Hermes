@@ -127,4 +127,4 @@ if __name__ == "__main__":
                      get_authenticator_from_environment('conversation'))
     assistant = AssistantV1(version="2019-11-06", authenticator=authenticator)
     workspace_id = assistant_setup.init_skill(assistant)
-    socketio.run(app, host='172.18.4.234', port=int(port))
+    socketio.run(app, host='0.0.0.0', port=int(port))
