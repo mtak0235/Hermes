@@ -1,6 +1,16 @@
 let conversationContext = '';
 let recorder;
 let context;
+let delivery_str = [];
+let flag = -1;
+
+function mtak_pass(str){
+	let merchandise = str[0];
+	let receiver = str[1];
+	let address = str[2];
+	const times = new Date();
+	window.location.href = `/clerk?id=${times.getMinutes()}&merchandise=${merchandise}&receiver=${receiver}&address=${address}`
+}
 
 function displayMsgDiv(str, who) {
   const time = new Date();
@@ -10,11 +20,29 @@ function displayMsgDiv(str, who) {
   hours = hours % 12;
   hours = hours ? hours : 12; // the hour "0" should be "12"
   hours = hours < 10 ? '0' + hours : hours;
-  minutes = minutes < 10 ? '0' + minutes : minutes;
+  minutes = minutes < 10 ? '0'+ minutes : minutes;
   const strTime = hours + ':' + minutes + ' ' + ampm;
   let msgHtml = "<div class='msg-card-wide mdl-card " + who + "'><div class='mdl-card__supporting-text'>";
   msgHtml += str;
   msgHtml += "</div><div class='" + who + "-line'>" + strTime + '</div></div>';
+	
+	if(str.match('#') && who == 'bot'){
+		console.log("상품");
+		delivery_str[0] = str;
+		flag = flag + 1;
+	}
+	else if(str.match('##'&& who=='bot')){
+		console.log("수신인");
+		delivery_str[1] = str;
+		flag = flag + 1;
+	}else if(str.match('###'&&who=='bot')){
+		console.log("주소지");
+		delivery_str[2] = str;
+	}
+	if(flag == 2){
+		mtak_pass(delivery_str);
+		flag = -1;
+	}
 
   $('#messages').append(msgHtml);
   $('#messages').scrollTop($('#messages')[0].scrollHeight);
