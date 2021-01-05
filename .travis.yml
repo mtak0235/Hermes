@@ -28,7 +28,7 @@ before_script:
 # register-starter.sh is smart!
 script:
   - flake8 .
-  - ./node_modules/.bin/eslint static/scripts/script_mtak.js
+  - ./node_modules_linux/.bin/eslint static/scripts/script_mtak.js
   - ./bmd-devops-pipeline/scripts/register-starter.sh $TRAVIS_BRANCH
 
 # Pull request builds and push builds only run when the target branch is one of these:
