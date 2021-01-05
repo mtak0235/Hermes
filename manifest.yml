@@ -10,11 +10,11 @@ applications:
   path: .
   random-route: false
   routes:
-  - route: hermesbot.us-south.cf.appdomain.cloud
+  - route: hmbot.us-south.cf.appdomain.cloud
   services:
-  - hermes stt2
-  - hermes assistant
-  - hermes tts
+  - hm stt
+  - hm assistant
+  - hm tts
     #declared-services:
     #wvb-speech-to-text:
     #label: speech_to_text

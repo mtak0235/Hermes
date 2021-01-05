@@ -7,16 +7,9 @@ language: node_js
 node_js:
   - '5.5.0'
 
-python:
-  - "3.5"
-  - "3.8"
-
 # Nothing special to install since we're just verifying compatibility of this repo with the
 # developer experience infrastructure.
-install:
-  - pip install -r requirements.txt
-  - pip install flake8
-  - npm install
+install: true
 
 # Clone the repository that has the smart script for validating this repo against the registry
 # microservice (which itself validates against scaffolder, therefore Yeoman and SDKGen microservices).
@@ -27,8 +20,6 @@ before_script:
 # Run a dry-run registration for pull requests, and a real registration for pushes.
 # register-starter.sh is smart!
 script:
-  - flake8 .
-  - ./node_modules/.bin/eslint static/scripts/script_mtak.js
   - ./bmd-devops-pipeline/scripts/register-starter.sh $TRAVIS_BRANCH
 
 # Pull request builds and push builds only run when the target branch is one of these:

@@ -53,6 +53,6 @@ chart-path : "chart/hermesbot"
 
 # The IBM version of this configuration
 version : "0.0.3"
-ibm-generated-id : "b3ec4794-a4ec-42c1-8dd0-a17895dc3df2"
-ibm-cloud-app-id : "f1471202-602b-4442-aac7-a3d4502bae68"
+ibm-generated-id : "8330ba1b-beef-4ec5-9ef0-71561d235f35"
+ibm-cloud-app-id : "4059458d-9b51-4754-b248-3cab6029ed91"
 credentials-filepath : "server/localdev-config.json, vcap-local.js, credentials.json, localdev-config.json"

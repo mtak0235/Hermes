@@ -105,7 +105,7 @@ def getTextFromSpeech():
     sttService = SpeechToTextV1()
 
     response = sttService.recognize(
-            audio=request.get_data(cache=False),
+        audio=request.get_data(cache=False),
             model='ko-KR_NarrowbandModel',
             content_type='audio/wav',
             timestamps=True,

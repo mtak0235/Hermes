@@ -1,1 +1,1 @@
-{"build-release-ready":true,"build-debug-ready":false,"devops":false,"deploy-image":"","chart-path":"","ibm-cluster":"","motd-access":"Tue, 05 Jan 2021 04:03:18 KST","app-id":"f1471202-602b-4442-aac7-a3d4502bae68","deploy-target":"buildpack","knative-service-filename":""}
+{"build-release-ready":true,"build-debug-ready":false,"devops":false,"deploy-image":"","chart-path":"","ibm-cluster":"","motd-access":"Wed, 06 Jan 2021 00:01:34 KST","app-id":"4059458d-9b51-4754-b248-3cab6029ed91","deploy-target":"buildpack","knative-service-filename":""}
