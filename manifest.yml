@@ -12,7 +12,7 @@ applications:
   routes:
   - route: hermesbot.us-south.cf.appdomain.cloud
   services:
-  - hermes stt
+  - hermes stt2
   - hermes assistant
   - hermes tts
     #declared-services:

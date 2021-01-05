@@ -106,12 +106,12 @@ def getTextFromSpeech():
 
     response = sttService.recognize(
             audio=request.get_data(cache=False),
-            model='ko-KR_BroadbandModel',
+            model='ko-KR_NarrowbandModel',
             content_type='audio/wav',
             timestamps=True,
             word_confidence=True,
             smart_formatting=True).get_result()
-
+    print(response)
     # Ask user to repeat if STT can't transcribe the speech
     if len(response['results']) < 1:
         return Response(mimetype='plain/text',
