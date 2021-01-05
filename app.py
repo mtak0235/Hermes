@@ -55,6 +55,9 @@ def before_request():
 def Welcome():
     return app.send_static_file('index.html')
 
+@app.route('/clerk')
+def Order():
+    return  app.send_static_file('clerk.html')
 
 @app.route('/api/conversation', methods=['POST', 'GET'])
 def getConvResponse():
