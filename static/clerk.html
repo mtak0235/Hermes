@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset = 'utf-8'>
+		<title>Hermes Order</title>
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    		<script type="text/javascript">
+        	$(document).ready(function () {
+		function getParameterByName(name) {
+        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+                results = regex.exec(location.search);
+        return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+		
+            	var merchandise = getParameterByName("merchandise");
+            	console.log('merchandise : ' + merchandise);
+		document.getElementById("merchandise").innerHTML=merchandise;
+
+            	var receiver = getParameterByName("receiver"); 
+            	console.log('receiver : ' + receiver);
+		document.getElementById("receiver").innerHTML=receiver;
+
+            	var address = getParameterByName("address");
+		console.log('address : ' + address);
+		document.getElementById("address").innerHTML=address;
+        	});
+    		</script>
+		<style>
+		h1{
+			font-size:45px;
+			color:white;
+		}
+		.block{	
+			width:60%;
+			height:1000px;
+			margin:0 auto;
+			text-align:center;
+			background-color:black;
+			border-radius:20px;
+			position:relative;
+
+		}
+		#element {
+			width: 90%;
+			margin-left:3.5%;
+			position:absolute;
+			border-radius:20px;
+			font-size:30px;
+			background-color:white;
+			padding:20px;
+			font-weight:1000;
+		}
+		#receiver,#merchandise,#address{
+			background-color:#BB78FF;
+			border-radius:5px;
+			font-style:oblique;
+			font-weight:600;
+		}
+		</style>	
+	</head>
+	<body>
+		<div class="block"><h1>Ordering List</h1>
+			<div id = "element">
+				[수령인]<br><br><span id= "receiver"></span><br><br>
+				[상품명]<br><br><span id= "merchandise"></span><br><br>
+				[주소지]<br><br><span id= "address"></span><br>
+			</div>
+		</div>
+	</body>
+</html>  
+
