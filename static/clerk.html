@@ -24,6 +24,15 @@
             	var address = getParameterByName("address");
 		console.log('address : ' + address);
 		document.getElementById("address").innerHTML=address;
+		
+		var cnt = getParameterByName("cnt");
+		console.log('cnt : ' + cnt);
+		document.getElementById("cnt").innerHTML=cnt;
+
+		var priv_num = getParameterByName("priv_num");
+		console.log('priv_num : ' + priv_num);
+		document.getElementById("priv_num").innerHTML=priv_num;
+
         	});
     		</script>
 		<style>
@@ -51,7 +60,7 @@
 			padding:20px;
 			font-weight:1000;
 		}
-		#receiver,#merchandise,#address{
+		#receiver,#merchandise,#address, #priv_num,#cnt{
 			background-color:#BB78FF;
 			border-radius:5px;
 			font-style:oblique;
@@ -62,9 +71,12 @@
 	<body>
 		<div class="block"><h1>Ordering List</h1>
 			<div id = "element">
-				[수령인]<br><br><span id= "receiver"></span><br><br>
-				[상품명]<br><br><span id= "merchandise"></span><br><br>
-				[주소지]<br><br><span id= "address"></span><br>
+				[수령인]<br><br><span id= "receiver"></span>
+	
+				(<span id="priv_num"></span>)
+				<br><br>
+				[상품명]<br><br><span id= "merchandise"></span>(<span id="cnt"></span>)<br><br>
+				[주소지]<br><br><span id= "address"></span><br><br>
 			</div>
 		</div>
 	</body>
