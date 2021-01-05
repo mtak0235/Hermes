@@ -1,15 +1,17 @@
 let conversationContext = '';
 let recorder;
 let context;
-let delivery_str = [];
-let flag = -1;
 
-function mtak_pass(str){
-	let merchandise = str[0];
-	let receiver = str[1];
-	let address = str[2];
+function mtak_pass(strr){
+	let str = strr.split("/",10);
+	console.log(strr);
+	let merchandise = str[4];
+	let priv_num = str[3];
+	let receiver = str[2];
+	let address = str[6];
+	let cnt = str[5];
 	const times = new Date();
-	window.location.href = `/clerk?id=${times.getMinutes()}&merchandise=${merchandise}&receiver=${receiver}&address=${address}`
+	window.location.href = `/clerk?id=${times.getMinutes()}&merchandise=${merchandise}&receiver=${receiver}&address=${address}&cnt=${cnt}&priv_num=${priv_num}`
 }
 
 function displayMsgDiv(str, who) {
@@ -26,24 +28,6 @@ function displayMsgDiv(str, who) {
   msgHtml += str;
   msgHtml += "</div><div class='" + who + "-line'>" + strTime + '</div></div>';
 	
-	if(str.match('#') && who == 'bot'){
-		console.log("상품");
-		delivery_str[0] = str;
-		flag = flag + 1;
-	}
-	else if(str.match('##'&& who=='bot')){
-		console.log("수신인");
-		delivery_str[1] = str;
-		flag = flag + 1;
-	}else if(str.match('###'&&who=='bot')){
-		console.log("주소지");
-		delivery_str[2] = str;
-	}
-	if(flag == 2){
-		mtak_pass(delivery_str);
-		flag = -1;
-	}
-
   $('#messages').append(msgHtml);
   $('#messages').scrollTop($('#messages')[0].scrollHeight);
 
@@ -55,6 +39,9 @@ function displayMsgDiv(str, who) {
     $('#q').removeAttr('disabled');
     $('#p2').fadeTo(500, 0);
   }
+	if(str.match('/���') && who == 'bot'){
+		mtak_pass(str);
+	}
 }
 
 $(document).ready(function() {
