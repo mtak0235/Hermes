@@ -7,7 +7,7 @@
 
 https://user-images.githubusercontent.com/48946398/129061205-05e4aa60-755f-4786-93c3-b79c076ed3cc.mov
 
-## 세부<br>
+## 기술 세부<br>
 https://docs.google.com/presentation/d/1sKqJ30yWviYYy24Hw_NY0unRSxbZUfESWRos5fpLkAw/edit#slide=id.gb2f428488d_0_4920
 
 ## 시연 영상
