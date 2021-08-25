@@ -12,7 +12,6 @@
                 results = regex.exec(location.search);
         return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
     }
-		
             	var merchandise = getParameterByName("merchandise");
             	console.log('merchandise : ' + merchandise);
 		document.getElementById("merchandise").innerHTML=merchandise;

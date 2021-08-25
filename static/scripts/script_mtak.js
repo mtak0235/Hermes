@@ -39,7 +39,7 @@ function displayMsgDiv(str, who) {
     $('#q').removeAttr('disabled');
     $('#p2').fadeTo(500, 0);
   }
-	if(str.match('/¹è´Þ') && who == 'bot'){
+	if(str.match('/Â¹Ã¨Â´Ãž') && who == 'bot'){
 		mtak_pass(str);
 	}
 }
@@ -144,11 +144,6 @@ recordMic.onclick = function() {
 function startUserMedia(stream) {
   const input = context.createMediaStreamSource(stream);
   console.log('Media stream created.');
-  // Uncomment if you want the audio to feedback directly
-  // input.connect(audio_context.destination);
-  // console.log('Input connected to audio context destination.');
-
-  // eslint-disable-next-line
   recorder = new Recorder(input);
   console.log('Recorder initialised.');
 }
@@ -161,7 +156,6 @@ function startRecording(button) {
 function stopRecording(button) {
   recorder && recorder.stop();
   console.log('Stopped recording.');
-
   recorder &&
     recorder.exportWAV(function(blob) {
       console.log(blob);
@@ -169,7 +163,6 @@ function stopRecording(button) {
       const request = new XMLHttpRequest();
       request.open('POST', url, true);
       // request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-
       // Decode asynchronously
       request.onload = function() {
         callConversation(request.response);
@@ -177,7 +170,6 @@ function stopRecording(button) {
       };
       request.send(blob);
     });
-
   recorder.clear();
 }
 
@@ -188,7 +180,6 @@ window.onload = function init() {
     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia;
     // eslint-disable-next-line
     window.URL = window.URL || window.webkitURL;
-
     context = new AudioContext();
     console.log('Audio context set up.');
     console.log('navigator.getUserMedia ' + (navigator.getUserMedia ? 'available.' : 'not present!'));
